@@ -36,13 +36,7 @@ describe('Notification component', () => {
   })
 
   test('emits event when close button is clicked', async () => {
-    const wrapper = mount(NotificationToast, {
-      data() {
-        return {
-          clicked: false
-        }
-      }
-    })
+    const wrapper = mount(NotificationToast)
     // find accept class, id or attribute and returns an element
     const closeButton = wrapper.find('button')
     await closeButton.trigger('click')
