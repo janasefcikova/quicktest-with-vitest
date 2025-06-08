@@ -1,9 +1,17 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import {ref} from 'vue'
+import NotificationToast from './components/NotificationToast.vue'
+
+const message = ref("Image uploaded successfully")
+
+const clearNotification = () => message.value = ""
+
 </script>
 
 <template>
+
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
@@ -13,6 +21,8 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
+      <NotificationToast status="success" :message="message"
+  @clear-notification="clearNotification" />
     <TheWelcome />
   </main>
 </template>
