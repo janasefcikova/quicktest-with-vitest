@@ -3,6 +3,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import {ref} from 'vue'
 import NotificationToast from './components/NotificationToast.vue'
+import UserPostCard from './components/UserPostCard.vue'
 
 const message = ref("Image uploaded successfully")
 
@@ -23,7 +24,7 @@ const clearNotification = () => message.value = ""
   <main>
       <NotificationToast status="success" :message="message"
   @clear-notification="clearNotification" />
-    <TheWelcome />
+      <UserPostCard />
   </main>
 </template>
 
