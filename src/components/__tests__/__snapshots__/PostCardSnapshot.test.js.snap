@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Post Card Component > before fetching data, post card show loading 1`] = `
+"<div>
+  <!--v-if-->
+  <p data-testid="loader">Loading...</p>
+  <!--v-if-->
+</div>"
+`;
+
+exports[`Post Card Component > displays an error message if fetching a post fails 1`] = `
+"<div>
+  <!--v-if-->
+  <!--v-if-->
+  <p data-testid="error-message">Error occurred</p>
+</div>"
+`;
+
+exports[`Post Card Component > with valid data 1`] = `
+"<div>
+  <div>
+    <h1 data-testid="post-title">sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h1>
+    <p data-testid="post-body">quia et suscipit
+      suscipit recusandae consequuntur expedita et cum
+      reprehenderit molestiae ut ut quas totam
+      nostrum rerum est autem sunt rem eveniet architecto</p>
+  </div>
+  <!--v-if-->
+  <!--v-if-->
+</div>"
+`;
