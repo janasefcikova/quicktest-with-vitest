@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div v-if="post">
-            <h1 data-testid="post-title">{{ post.title }}</h1>
+        <div v-if="post" style="padding: 1em; border: 2px solid gray; border-radius: 5px;">
+            <h1>Post card without shadcn</h1>
+            <h2 data-testid="post-title">{{ post.title }}</h2>
             <p data-testid="post-body">{{ post.body }}</p>
         </div>
         <p v-if="loading" data-testid="loader">Loading...</p>

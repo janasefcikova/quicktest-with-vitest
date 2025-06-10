@@ -12,7 +12,7 @@ import {
 <template>
   <Card>
     <CardHeader>
-      <CardTitle>Card Title</CardTitle>
+      <CardTitle>Card with shadcn library</CardTitle>
       <CardDescription>Card Description</CardDescription>
     </CardHeader>
     <CardContent>

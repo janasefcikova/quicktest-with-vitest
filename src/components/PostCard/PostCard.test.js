@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import axios from 'axios'
-import PostCard from '../PostCard.vue'
+import PostCard from '@/components/PostCard/PostCard.vue'
 import { mount, flushPromises } from '@vue/test-utils'
 
 const mockPost = {
@@ -11,23 +11,30 @@ const mockPost = {
 }
 
 describe('Post Card Component', () => {
-  test('before fetching data, post card show loading', async () => {
+  test('can fetch and display a post', async () => {
     vi.spyOn(axios, 'get').mockResolvedValueOnce({ data: mockPost })
-    const wrapper = mount(PostCard)
-    expect(wrapper.html()).toMatchSnapshot()
-  })
 
-  test('with valid data', async () => {
-    vi.spyOn(axios, 'get').mockResolvedValueOnce({ data: mockPost })
     const wrapper = mount(PostCard)
+
+    expect(wrapper.html()).toContain('Loading...')
+
     await flushPromises()
-    expect(wrapper.html()).toMatchSnapshot()
+
+    // new
+    expect(wrapper.find('[data-testid="post-title"]').text()).toBe(mockPost.title)
+
+    expect(wrapper.find('[data-testid="post-body"]').text()).toBe(mockPost.body)
   })
 
-  test('displays an error message if fetching a post fails', async () => {
+  test('can display an error message if fetching a post fails', async () => {
     vi.spyOn(axios, 'get').mockRejectedValueOnce(new Error('Error occurred'))
+
     const wrapper = mount(PostCard)
+
+    expect(wrapper.html()).toContain('Loading...')
+
     await flushPromises()
-    expect(wrapper.html()).toMatchSnapshot()
+
+    expect(wrapper.find('[data-testid="error-message"]').text()).toBe('Error occurred')
   })
 })

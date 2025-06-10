@@ -18,8 +18,9 @@ exports[`Post Card Component > displays an error message if fetching a post fail
 
 exports[`Post Card Component > with valid data 1`] = `
 "<div>
-  <div>
-    <h1 data-testid="post-title">sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h1>
+  <div style="padding: 1em; border: 2px solid gray; border-radius: 5px;">
+    <h1>Post card without shadcn</h1>
+    <h2 data-testid="post-title">sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h2>
     <p data-testid="post-body">quia et suscipit
       suscipit recusandae consequuntur expedita et cum
       reprehenderit molestiae ut ut quas totam

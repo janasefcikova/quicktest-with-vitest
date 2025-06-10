@@ -1,7 +1,7 @@
 // tests/UserPostCard.spec.js
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import UserPostCard from '@/components/UserPostCard.vue'
+import UserPostCard from '@/components/UserPostCard/UserPostCard.vue'
 
 describe('UserPostCard', () => {
   it('matches the snapshot', () => {
